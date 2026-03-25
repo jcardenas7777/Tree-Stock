@@ -13,9 +13,10 @@ public class Main {
                  menu();// mostrar el menu
                  System.out.println("INGRESE UNA OPCION: ");
                  //LEER LA OPCION DEL USUARIO
-                 opcion=teclado.nextLine();
+             opcion=teclado.nextLine();
+               try {
                    switch (opcion) {
-                case "1":
+            case "1":
                      OUTER:
                      while (true) {
                          System.out.println("***REGISTRO***\n");
@@ -77,8 +78,12 @@ public class Main {
                 case "6":
                     break;
                 default:
-                    System.out.println("OPCION NO VALIDA, INTENTE DE NUEVO");;
-            }
+                    System.out.println("OPCION NO VALIDA, INTENTE DE NUEVO");
+                    }
+                } catch (Exception e) {
+                    System.out.println("ERROR: Entrada inválida");
+                    teclado.nextLine(); // limpiar el buffer en caso de error
+                }
               } while (!opcion.equals("6"));
      }
      System.out.println("PROGRAMA TERMINADO...");

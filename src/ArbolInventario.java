@@ -9,6 +9,9 @@ public class ArbolInventario {
     }
     
     private String inOrden(Producto producto){
+        //METODO RECURSIVO PARA MOSTRAR EL ARBOL EN INORDEN, ESTE METODO LLAMA A OTRO METODO QUE RECIBE UN NODO COMO PARAMETRO, ESTE METODO SE ENCARGA DE RECORRER EL ARBOL EN INORDEN, PRIMERO RECORRE EL SUBARBOL IZQUIERDO, LUEGO PROCESA EL DATO DEL NODO ACTUAL Y POR ULTIMO RECORRE EL SUBARBOL DERECHO
+
+        
         //verificar que el producto no sea nulo
         if (producto!=null) {
                //1.recorrer el subarbol izquierdo
@@ -19,6 +22,8 @@ public class ArbolInventario {
         return "";
     }
       public String inOrden(){
+        
+        
           return inOrden(raiz);
     
     }
@@ -38,6 +43,7 @@ public class ArbolInventario {
         }
     }
       public void preOrden(){
+        //METODO RECURSIVO PARA MOSTRAR EL ARBOL EN PREORDEN, ESTE METODO LLAMA A OTRO METODO QUE RECIBE UN NODO COMO PARAMETRO, ESTE METODO SE ENCARGA DE RECORRER EL ARBOL EN PREORDEN, PRIMERO PROCESA EL DATO DEL NODO ACTUAL, LUEGO RECORRE EL SUBARBOL IZQUIERDO Y POR ULTIMO RECORRE EL SUBARBOL DERECHO
           preOrden(raiz);
     
     }
@@ -56,6 +62,7 @@ public class ArbolInventario {
         }
     }
       public void postOrden(){
+        //METODO RECURSIVO PARA MOSTRAR EL ARBOL EN POSTORDEN, ESTE METODO LLAMA A OTRO METODO QUE RECIBE UN NODO COMO PARAMETRO, ESTE METODO SE ENCARGA DE RECORRER EL ARBOL EN POSTORDEN, PRIMERO RECORRE EL SUBARBOL IZQUIERDO, LUEGO EL SUBARBOL DERECHO Y POR ULTIMO PROCESA EL DATO DEL NODO ACTUAL
           postOrden(raiz);
     
     }
@@ -64,7 +71,7 @@ public class ArbolInventario {
     public void insertar(int id, String nombre){
         //VERIFICAR SI EL ARBOL ESTA VACIO
         if (raiz==null) {
-//CREAR EL NUEVO NODO Y ASIGNARLO COMO RAIZ
+       //CREAR EL NUEVO NODO Y ASIGNARLO COMO RAIZ
             raiz=new Producto(id, nombre);
             tamaño++;
         }else{
@@ -116,11 +123,11 @@ public class ArbolInventario {
             }else{
                 //SI EL DATO ES MENOR QUE EL ID DEL NODO ACTUAL, MOVERSE AL NODO IZQUIERDO, SI EL DATO ES MAYOR QUE EL ID DEL NODO ACTUAL, MOVERSE AL NODO DERECHO
                 if (dato<aux.id) {
-                    //SI EL DATO ES MENOR QUE EL ID DEL NODO ACTUAL, MOVERSE AL NODO IZQUIERDO
+                  
                     aux=aux.izquierda;
                     
                 }else{
-                    //SI EL DATO ES MAYOR QUE EL ID DEL NODO ACTUAL, MOVERSE AL NODO DERECHO
+                  
                     aux=aux.derecho;
                 
                 
